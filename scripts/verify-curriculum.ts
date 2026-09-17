@@ -1,0 +1,6 @@
+import {exercises} from '../src/content/factory';import type {Language,Level} from '../src/types';
+// @ts-expect-error standalone Node module
+import {capabilities,runCode} from '../server/runner.mjs';
+const caps=await capabilities();let passed=0,failed=0,skipped=0;const details:string[]=[];
+for(const language of (process.argv.length>2?process.argv.slice(2):['go','rust','java','python','scala']) as Language[]){if(!caps[language].available){console.log(`SKIP ${language}: compiler unavailable`);skipped+=12;continue;}const {units}=await import(`../src/content/${language}.ts`);for(const level of ['beginner','intermediate','advanced'] as Level[]){for(const e of exercises(language,level,units[level]).filter(e=>e.kind==='repair')){const good=await runCode({language,source:e.solution,expected:e.expected});const bad=await runCode({language,source:e.code,expected:e.expected});const success=good.status==='ok'&&good.tests.every((t:{passed:boolean})=>t.passed)&&!(bad.status==='ok'&&bad.tests.every((t:{passed:boolean})=>t.passed));console.log(`${success?'PASS':'FAIL'} ${e.id}`);if(success)passed++;else{failed++;details.push(`${e.id}\nReference: ${JSON.stringify(good)}\nBroken: ${JSON.stringify(bad)}`);}}}}
+console.log(JSON.stringify({passed,failed,skipped},null,2));if(details.length)console.log(details.join('\n'));process.exitCode=failed?1:0;

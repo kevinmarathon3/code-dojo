@@ -1,0 +1,4 @@
+// Local reproduction of a GitHub Pages repository subpath, for release verification.
+import http from 'node:http';import {readFile} from 'node:fs/promises';import {resolve,extname} from 'node:path';
+const root=resolve('dist');
+http.createServer(async(req,res)=>{const pathname=new URL(req.url,'http://127.0.0.1').pathname;if(!pathname.startsWith('/code-dojo/')){res.writeHead(404);res.end();return;}const target=resolve(root,decodeURIComponent(pathname.slice('/code-dojo/'.length))||'index.html');if(!target.startsWith(root+'/')){res.writeHead(403);res.end();return;}try{const data=await readFile(target);res.writeHead(200,{'Content-Type':{'.html':'text/html','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml'}[extname(target)]??'application/octet-stream'});res.end(data);}catch{res.writeHead(404);res.end();}}).listen(4173,'127.0.0.1',()=>console.log('Static check: http://127.0.0.1:4173/code-dojo/'));
