@@ -17,5 +17,11 @@
 - Physical iPhone Safari was not available for direct testing. Mobile Chromium/in-app checks do not establish full physical-device Safari compatibility.
 - This is an authored conceptual teaching tool, not a live memory/thread debugger or a general browser compiler.
 - Native execution is for trusted personal code and is not a security sandbox. Scala cold compilation may take significantly longer than a short drill.
-- GitHub authentication/connection did not work on this machine, so no GitHub repository was created remotely and no Pages site was published. The GitHub Actions workflow and independent local repository are prepared.
+- Initial GitHub authentication/connection problems were resolved on September 17. The public repository and GitHub Pages deployment are now live.
 - Java's Maven networking failed on this host. Official Scala compiler artifacts were cached in ignored `.toolchains/maven` using `scripts/cache-scala.mjs`; Scala then passed all 12 unit checks without remote dependency access.
+
+## Deployment — 2026-09-17
+
+- Published at https://kevinmarathon3.github.io/code-dojo/ from the independent repository https://github.com/kevinmarathon3/code-dojo.
+- GitHub Actions build, automated tests, and Pages deployment succeeded: https://github.com/kevinmarathon3/code-dojo/actions/runs/35275199214.
+- Verified the public Spanish page in the in-app browser, including the conceptual animation, worked examples, and return to the lesson. Left the first lesson open in Spanish.

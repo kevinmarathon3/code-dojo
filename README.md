@@ -2,6 +2,8 @@
 
 A personal, bilingual coding dojo for **Go, Rust, Java, Python, and Scala 3**. Independent of any other project in its parent folder.
 
+**Play online:** [Español](https://kevinmarathon3.github.io/code-dojo/?lang=es) · [English](https://kevinmarathon3.github.io/code-dojo/?lang=en). The online version supports lessons, conceptual animations, and constrained practice; native code execution requires the local runner.
+
 ## Start locally
 
 Requires Node.js 22+ and npm.
