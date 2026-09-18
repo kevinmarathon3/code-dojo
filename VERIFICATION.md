@@ -25,3 +25,9 @@
 - Published at https://kevinmarathon3.github.io/code-dojo/ from the independent repository https://github.com/kevinmarathon3/code-dojo.
 - GitHub Actions build, automated tests, and Pages deployment succeeded: https://github.com/kevinmarathon3/code-dojo/actions/runs/35275199214.
 - Verified the public Spanish page in the in-app browser, including the conceptual animation, worked examples, and return to the lesson. Left the first lesson open in Spanish.
+
+## Single-panel update — 2026-09-17
+
+- Removed desktop split panels, resize controls, and separate mobile Code/Lesson tabs. Practice editor is inline; teaching phases show no editor.
+- Added Simple/Technical animation views to guided lessons and visual labs, with shared playback and selectable source lines. Technical state is conceptual; unmodeled lines do not fabricate memory snapshots.
+- Verified Spanish lesson, technical tab, and inline practice in the browser. No splitter remains. Production build and all 12 automated tests passed.

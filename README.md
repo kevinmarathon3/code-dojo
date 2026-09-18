@@ -15,6 +15,8 @@ npm run dev
 
 Open **http://127.0.0.1:5173/**. The development command starts Vite and the local runner (port 4318). Keep the terminal running. Select **English / Español** at the top; the selection is saved on this device. `?lang=es` can explicitly open a Spanish preview.
 
+The interface uses one centered learning panel. The editor appears within practice. Animations offer **Simple** and **Technical** tabs with shared playback; the technical view includes conceptual state and selectable source lines. These authored models do not claim to trace arbitrary code or expose actual memory addresses.
+
 Each unit begins with **Lesson → Animation → Two worked examples → Practice**. The practice values differ from the teaching examples. Use the numbered path to revisit an explanation. Practice has prediction, completion, and repair forms, and a real-code scratchpad when a local toolchain is available.
 
 The curriculum contains 60 units, 180 exercise records, seven numeric variants per record, 12 two-scenario visual labs with prediction/application checkpoints, and 12 engineering case studies. Variants change small inputs; they are not a claim of 1,260 independently authored problems or complete coverage of these languages.
