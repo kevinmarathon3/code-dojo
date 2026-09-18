@@ -31,3 +31,9 @@
 - Removed desktop split panels, resize controls, and separate mobile Code/Lesson tabs. Practice editor is inline; teaching phases show no editor.
 - Added Simple/Technical animation views to guided lessons and visual labs, with shared playback and selectable source lines. Technical state is conceptual; unmodeled lines do not fabricate memory snapshots.
 - Verified Spanish lesson, technical tab, and inline practice in the browser. No splitter remains. Production build and all 12 automated tests passed.
+
+## Guided-game update — 2026-09-18
+
+- Added a compact home path, one-action lesson cards, beginner numeric answer tiles, optional editor, and an end-of-round screen after three challenges. Preserved bilingual content, simple/technical animation tabs, two worked examples, advanced labs, and engineering topics.
+- Browser verification completed a Spanish Python round through teaching, animation, examples, recognition, completion, repair, success, and next lesson. At 390 × 844, the home path had no horizontal overflow.
+- Numeric recognition responses are recorded as assisted; existing unassisted mastery requirements remain in force. Production build and all 12 automated tests passed.

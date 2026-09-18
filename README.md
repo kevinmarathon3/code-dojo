@@ -15,7 +15,7 @@ npm run dev
 
 Open **http://127.0.0.1:5173/**. The development command starts Vite and the local runner (port 4318). Keep the terminal running. Select **English / Español** at the top; the selection is saved on this device. `?lang=es` can explicitly open a Spanish preview.
 
-The interface uses one centered learning panel. The editor appears within practice. Animations offer **Simple** and **Technical** tabs with shared playback; the technical view includes conceptual state and selectable source lines. These authored models do not claim to trace arbitrary code or expose actual memory addresses.
+The home screen offers one start button and a four-unit learning path. Lessons present one task at a time and finish after three challenges. Beginner numeric predictions use answer tiles; completion and repair require typing. Recognition answers are recorded as assisted, not unassisted recall. The editor is optional inside a disclosure, while language, level, and detailed progress live in settings. Animations offer **Simple** and **Technical** tabs with shared playback; the technical view includes conceptual state and selectable source lines. These authored models do not claim to trace arbitrary code or expose actual memory addresses.
 
 Each unit begins with **Lesson → Animation → Two worked examples → Practice**. The practice values differ from the teaching examples. Use the numbered path to revisit an explanation. Practice has prediction, completion, and repair forms, and a real-code scratchpad when a local toolchain is available.
 
