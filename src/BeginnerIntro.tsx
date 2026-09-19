@@ -1,0 +1,12 @@
+import {useState} from 'react';
+import {ArrowRight,ChevronLeft} from 'lucide-react';
+import type {Exercise,Locale} from './types';
+import {beginnerLesson,explainBeginnerLine} from './beginner';
+export default function BeginnerIntro({lesson,locale,onNext}:{lesson:Exercise;locale:Locale;onNext:()=>void}){
+ const [page,setPage]=useState(0),[selected,setSelected]=useState(0);const t=(en:string,es:string)=>locale==='es'?es:en;const content=beginnerLesson(lesson,locale);
+ const lines=lesson.solution.split('\n').map((code,index)=>({code,index})).filter(x=>x.code.trim());const picked=lines[selected]??lines[0];
+ return <div className="beginner-intro"><div className="intro-pages" aria-label={t('Explanation progress','Progreso de explicación')}>{[0,1,2].map(i=><span key={i} className={page>=i?'filled':''}/>)}</div>
+ {page===0?<><p className="lede">{content.goal}</p><div className="human-idea"><span aria-hidden="true">💡</span><p>{content.idea}</p></div><p className="lesson-caption">{t('First understand the idea. We’ll write the code next.','Primero entiende la idea. Después escribiremos el código.')}</p></>:page===1?<><h3>{t('This is how you write it','Así se escribe')}</h3><pre className="first-code">{content.code}</pre><p className="lede">{content.meaning}</p><p className="plain-explanation">{content.syntax}</p></>:<><h3>{t('Where does that line go?','¿Dónde va esa línea?')}</h3><p className="lesson-caption">{t('Here is the complete program. Tap a line to learn what its words mean. You don’t need to memorize everything at once.','Aquí está el programa completo. Toca una línea para entender sus palabras. No necesitas memorizarlo todo de una vez.')}</p><div className="program-tour"><div className="trace-code">{lines.map((line,i)=><button key={line.index} aria-pressed={i===selected} onClick={()=>setSelected(i)}><span>{line.index+1}</span>{line.code.trim()}</button>)}</div><p className="plain-explanation" aria-live="polite">{explainBeginnerLine(picked.code,lesson.language,locale)??content.syntax}</p></div></>}
+ <button className="primary guided-next" onClick={()=>page<2?setPage(p=>p+1):onNext()}>{page===0?t('How do I write it?','¿Cómo lo escribo?'):page===1?t('Explain the complete program','Explícame el programa completo'):t('Show it in action','Muéstralo en acción')}<ArrowRight size={18}/></button>{page>0&&<button className="quiet-button" onClick={()=>setPage(p=>p-1)}><ChevronLeft size={14}/>{t('Back','Volver')}</button>}
+ </div>;
+}

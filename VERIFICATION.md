@@ -37,3 +37,12 @@
 - Added a compact home path, one-action lesson cards, beginner numeric answer tiles, optional editor, and an end-of-round screen after three challenges. Preserved bilingual content, simple/technical animation tabs, two worked examples, advanced labs, and engineering topics.
 - Browser verification completed a Spanish Python round through teaching, animation, examples, recognition, completion, repair, success, and next lesson. At 390 × 844, the home path had no horizontal overflow.
 - Numeric recognition responses are recorded as assisted; existing unassisted mastery requirements remain in force. Production build and all 12 automated tests passed.
+
+## Beginner-first teaching — 2026-09-18
+
+- Replaced vague beginner titles with explicit learning goals across five languages. All 20 beginner units now introduce a real-world goal without code, explain a small expression, then offer an interactive full-program line walkthrough.
+- Explained chosen identifiers (score, x, double/twice), declaration syntax, entrypoints, printing, conditions, loops, and list transformations. Technical line inspection uses the same authored explanations.
+- Added SVG teaching scenes for points being stored/updated/copied to output, conditional paths, repeated accumulation, function input/result travel, and list mapping. CSS motion honors reduced-motion preferences. Scenes represent logical values, not physical allocations.
+- Browser checks: Spanish Go intro contains no code; declaration explanation precedes full source; selecting func main explains both terms; play reaches final output while retaining score; animation fits a 390px viewport without horizontal overflow.
+- Production build and 15 tests passed, including beginner intro coverage for both locales/all languages and animation before/after values.
+- Official references reviewed: [Go packages](https://go.dev/tour/basics/1), [Go declarations](https://go.dev/tour/basics/10), [Rust mutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html), [Java getting started](https://dev.java/learn/getting-started/), [Python introduction](https://docs.python.org/3/tutorial/introduction.html), [Scala basics](https://docs.scala-lang.org/tour/basics.html), and [Scala main methods](https://docs.scala-lang.org/scala3/book/methods-main-methods.html). Java examples retain the conventional explicit main signature used by this curriculum.
